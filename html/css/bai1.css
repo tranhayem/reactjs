@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+
+main {
+    
+}
+
+section {
+    display: inline-block;
+}
+
+#pageBody {
+    max-width: 70%;
+}
+
+aside {
+    float: right;
+    min-width: 20%;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer li {
+    list-style-type: none;
+}
