@@ -1,27 +1,21 @@
 var productList = [];
 function renderProductList() {
-    document.getElementById("tableBody").innerHTML = "",
+    $("tableBody").html(""),
         productList.forEach(product => {
-            document.getElementById("tableBody").innerHTML += `
+            $("tableBody").append(`
         <tr>
             <th scope="col"></th>
             <th scope="col">${product.name}</th>
             <th scope="col">${product.price}</th>
             <th scope="col">${product.unit}</th>
             <th scope="col">
-                <button type="button" class="btn btn-primary">
-                    <i class="bi bi-search"></i>
-                </button>
-                <button type="button" class="btn btn-primary" onclick = "editProduct(${product.id})">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                <button type="button" class="btn btn-danger" onclick = "deleteProduct(${product.id})">
-                    <i class="bi bi-trash"></i>
-                </button>
+                <button type="button" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                <button type="button" class="btn btn-primary" onclick = "editProduct(${product.id})"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" class="btn btn-danger" onclick = "deleteProduct(${product.id})"><i class="bi bi-trash"></i></button>
             </th>
         </tr>
-        `
-        });
+        `)
+    });
 }
 
 function FindMaxId() {
@@ -40,12 +34,12 @@ function editProduct(id) {
     });
     // đổ thông tin của phần từ vừa tìm được ra form
     var product = productList[index];
-    document.getElementById("productId").value = productList[index].id;
-    document.getElementById("productName").value = productList[index].name;
-    document.getElementById("productCode").value = productList[index].code;
-    document.getElementById("productUnit").value = productList[index].unit;
-    document.getElementById("productPrice").value = productList[index].price;
-    document.getElementById("productImportDate").value = productList[index].importDate;
+    $("productId").val() = productList[index].id;
+    $("productName").val() = productList[index].name;
+    $("productCode").val() = productList[index].code;
+    $("productUnit").val() = productList[index].unit;
+    $("productPrice").val() = productList[index].price;
+    $("productImportDate").val() = productList[index].importDate;
     var checkBoxes = document.querySelectorAll('input[name-pro]')
     renderProductList()
 }
@@ -71,21 +65,21 @@ function deleteProduct(id) {
 function validateForm() {
     var isValide = true;
     var product = {
-        name : document.getElementById('productName').value,
-        code : document.getElementById('productCode').value,
+        name : $('productName').val(),
+        code : $('productCode').val(),
     }
     // validate
     if (product.name.length > 20) {
-        document.getElementById("validateForm").innerHTML = "Ten san pham khong vuot qua 20 ky tu"
-        document.getElementById("validateForm").style.display = "block";
+        $("validateForm").html("Ten san pham khong vuot qua 20 ky tu")
+        $("validateForm").style.display = "block";
         isValide = false;
     }
     var index = productList.findIndex(function(element){
         return element.name == product.name;
     });
     if(index != -1) {
-        document.getElementById("validateForm").innerHTML = "Ten san pham bi trung"
-        document.getElementById("validateForm").style.display = "block";
+        $("validateForm").html("Ten san pham bi trung")
+        $("validateForm").style.display = "block";
         isValide = false;
     }
     return isValide;
@@ -97,29 +91,29 @@ function saveProduct() {
     var productType = []
     var checkBoxes = document.querySelectorAll('input[name=productType]:checked');
     checkBoxes.forEach(element => {
-        productType.push(element.value);
+        productType.push(element.val());
     })
-    var id = document.getElementById("productId").value
+    var id = $("productId").val();
     if (id === '') {
         var id = FindMaxId() + 1;
         var newProduct = {
             id: id,
-            name: document.getElementById("productName").value,
-            code: document.getElementById("productCode").value,
-            unit: document.getElementById("productUnit").value,
-            price: document.getElementById("productPrice").value,
-            importDate: document.getElementById("productImportDate").value
+            name: $("productName").val(),
+            code: $("productCode").val(),
+            unit: $("productUnit").val(),
+            price: $("productPrice").val(),
+            importDate: $("productImportDate").val()
         };
     productList.push(newProduct);
     } else {
         var index = productList.findIndex(function(element){
             return element.id == id;
         })
-        productList[index].name = document.getElementById("productName").value,
-        productList[index].code = document.getElementById("productCode").value,
-        productList[index].unit = document.getElementById("productUnit").value,
-        productList[index].price = document.getElementById("productPrice").value,
-        productList[index].importDate = document.getElementById("productImportDate").value
+        productList[index].name = $("productName").val(),
+        productList[index].code = $("productCode").val(),
+        productList[index].unit = $("productUnit").val(),
+        productList[index].price = $("productPrice").val(),
+        productList[index].importDate = $("productImportDate").val()
     }
     // cách 1: var id = productList.length === 0 ? 1 : 0;
     // cách 2: var id = FindMaxId() + 1;
@@ -128,5 +122,4 @@ function saveProduct() {
     // lấy phần tử có id lớn nhất
     // lấy id của phần tử đó +1
     renderProductList();
-
 }

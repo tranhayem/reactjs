@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./css/product.css">
   <script src="./js/product.js"></script>
@@ -43,57 +44,7 @@
               </tr>
             </thead>
             <tbody id="tableBody">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                </td>
-              </tr>
+
             </tbody>
           </table>
         </fieldset>
@@ -103,100 +54,105 @@
           <legend class="scheduler-border">Thông tin sản phẩm</legend>
           <form>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="productName">Tên sản phẩm:</label>
+              <div class="col-md-4">
+                <label>Tên sản phẩm:</label>
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" id="productName" placeholder="Nhập tên sản phẩm...">
+                <label for="">Hien thi loi</label>
+                <input type="hidden" class="productId">
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="productCode">Mã sản phẩm:</label>
+              <div class="col-md-4">
+                <label>Mã sản phẩm:</label>
               </div>
               <div class="col-md-8">
                 <input type="text" class="form-control" id="productCode" placeholder="Nhập mã sản phẩm...">
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="exampleInputEmail1">Loại sản phẩm:</label>
+              <div class="col-md-4">
+                <label>Loại sản phẩm:</label>
               </div>
-              <div class="col-md-8">
-                <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input">
-                  <label class="form-check-label" for="productType">Đồ gia dụng</label>
+              <div class="form-check col-md-8">
+                <div class="col-md-6">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="productType">Đồ gia dụng</label></br>
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="productType">Đồ điện tử</label></br>
                 </div>
-                <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input">
-                  <label class="form-check-label" for="productType">Đồ điện tử</label>
-                </div>
-                <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input">
-                  <label class="form-check-label" for="productType">Quần áo</label>
-                </div>
-                <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input">
-                  <label class="form-check-label" for="productType">Sách</label>
+                <div class="col-md-6">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="productType">Quần áo</label></br>
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="productType">Sách</label></br>
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="exampleInputEmail1">Đơn vị tính:</label>
+              <div class="col-md-4">
+                <label>Khuyến mãi:</label>
+              </div>
+              <div class="form-check col-md-8">
+                <div class="col-md-6">
+                  <input class="form-check-input" type="radio">
+                  <label class="form-check-label" for="productType">Đồ gia dụng</label></br>
+                  <input class="form-check-input" type="radio">
+                  <label class="form-check-label" for="productType">Đồ điện tử</label></br>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-4">
+                <label>Đơn vị tính:</label>
               </div>
               <div class="col-md-8">
-                <select class="custom-select" required>
+                <select class="form-control" id="productUnit">
                   <option value="">--Chọn đơn vị tính--</option>
-                  <option value="1">Bao</option>
                   <option value="2">Cái</option>
                   <option value="3">Chiếc</option>
+                  <option value="1">Bao</option>
                 </select>
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <label for="exampleInputEmail1">Giá sản phẩm:</label>
               </div>
               <div class="col-md-8">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nhập giá sản phẩm">
+                <input type="text" class="form-control" id="productPrice" placeholder="Nhập giá sản phẩm">
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="exampleInputEmail1">Ngày nhập:</label>
+              <div class="col-md-4">
+                <label>Ngày nhập:</label>
               </div>
               <div class="col-md-8">
-                <input class="form-control" type="date">
+                <input class="form-control" type="date" id="productImportDate">
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-3">
-                <label for="exampleInputEmail1">Mô tả:</label>
+              <div class="col-md-4">
+                <label>Mô tả:</label>
               </div>
               <div class="col-md-8">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                  placeholder="Mô tả sản phẩm..."></textarea>
+                <textarea class="form-control" id="productDescription" placeholder="Mô tả sản phẩm..."></textarea>
               </div>
+            </div class="form-group row">
+            <div class="offset-sm-4 col-sm-7 pull-right">
+              <button type="button" onclick=saveProduct() class="btn btn-primary">Save</button>
             </div>
-            <button type="submit" onclick=saveProduct() class="btn btn-primary">Save</button>
-          </form>
-        </fieldset>
       </div>
+      </form>
+      </fieldset>
+    </div>
     </div>
   </main>
   <footer>
 
   </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
+</br>
