@@ -6,9 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="./bootstrap4/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="./css/product.css">
   <script src="./js/product.js"></script>
@@ -17,21 +15,13 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
           </li>
         </ul>
       </div>
@@ -45,20 +35,23 @@
           <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Product ID</th>
-                <th scope="col">Price</th>
+                <th scope="col">STT</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Mã sản phẩm</th>
+                <th scope="col">Đơn vị tính</th>
                 <th scope="col">#</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tableBody">
               <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
                 <td>
+                  <button type="button" class="btn btn-primary">
+                    <i class="bi bi-search"></i>
+                  </button>
                   <button type="button" class="btn btn-primary">
                     <i class="bi bi-pencil-square"></i>
                   </button>
@@ -74,6 +67,9 @@
                 <td>@fat</td>
                 <td>
                   <button type="button" class="btn btn-primary">
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary">
                     <i class="bi bi-pencil-square"></i>
                   </button>
                   <button type="button" class="btn btn-danger">
@@ -87,6 +83,9 @@
                 <td>the Bird</td>
                 <td>@twitter</td>
                 <td>
+                  <button type="button" class="btn btn-primary">
+                    <i class="bi bi-search"></i>
+                  </button>
                   <button type="button" class="btn btn-primary">
                     <i class="bi bi-pencil-square"></i>
                   </button>
@@ -105,18 +104,18 @@
           <form>
             <div class="form-group row">
               <div class="col-md-3">
-                <label for="exampleInputEmail1">Tên sản phẩm:</label>
+                <label for="productName">Tên sản phẩm:</label>
               </div>
               <div class="col-md-8">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Hãy nhập tên sản phẩm">
+                <input type="text" class="form-control" id="productName" placeholder="Nhập tên sản phẩm...">
               </div>
             </div>
             <div class="form-group row">
               <div class="col-md-3">
-                <label for="exampleInputEmail1">Mã sản phẩm:</label>
+                <label for="productCode">Mã sản phẩm:</label>
               </div>
               <div class="col-md-8">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Hãy nhập mã sản phẩm">
+                <input type="text" class="form-control" id="productCode" placeholder="Nhập mã sản phẩm...">
               </div>
             </div>
             <div class="form-group row">
@@ -125,20 +124,20 @@
               </div>
               <div class="col-md-8">
                 <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Đồ gia dụng</label>
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label" for="productType">Đồ gia dụng</label>
                 </div>
                 <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Đồ điện tử</label>
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label" for="productType">Đồ điện tử</label>
                 </div>
                 <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Quần áo</label>
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label" for="productType">Quần áo</label>
                 </div>
                 <div class="form-check col-md-6">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Sách</label>
+                  <input type="checkbox" class="form-check-input">
+                  <label class="form-check-label" for="productType">Sách</label>
                 </div>
               </div>
             </div>
@@ -177,10 +176,10 @@
               </div>
               <div class="col-md-8">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                  placeholder="Mô tả sản phẩm"></textarea>
+                  placeholder="Mô tả sản phẩm..."></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" onclick=saveProduct() class="btn btn-primary">Save</button>
           </form>
         </fieldset>
       </div>
