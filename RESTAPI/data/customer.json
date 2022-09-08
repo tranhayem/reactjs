@@ -1,0 +1,22 @@
+[
+    {
+        "Id": 1,
+        "Name": "Trần Văn Minh",
+        "Address": "",
+        "Email" : "abc@gmail.com",
+        "Phone" : "",
+        "Avatar" : "",
+        "Gender" : 1,
+        "Interests" : [1,2,3]
+    },
+    {
+        "Id": 1,
+        "Name": "Lê Thu Trang",
+        "Address": "",
+        "Email" : "abc@gmail.com",
+        "Phone" : "",
+        "Avatar" : "",
+        "Gender" : 1,
+        "Interests" : [1,2,3]
+    }
+]

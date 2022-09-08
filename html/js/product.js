@@ -40,17 +40,18 @@ function editProduct(id) {
     });
     // đổ thông tin của phần từ vừa tìm được ra form
     var product = productList[index];
-    document.getElementById("productId").value = productList[index].id;
-    document.getElementById("productName").value = productList[index].name;
-    document.getElementById("productCode").value = productList[index].code;
-    document.getElementById("productUnit").value = productList[index].unit;
-    document.getElementById("productPrice").value = productList[index].price;
-    document.getElementById("productImportDate").value = productList[index].importDate;
+    $("#productId").val() = productList[index].id;
+    $("#productName").val() = productList[index].name;
+    $("#productCode").val() = productList[index].code;
+    $("#productUnit").val() = productList[index].unit;
+    $("#productPrice").val() = productList[index].price;
+    $("#productImportDate").val() = productList[index].importDate;
     var checkBoxes = document.querySelectorAll('input[name-pro]')
     renderProductList()
 }
 
 function deleteProduct(id) {
+    //PHẦN NÀY ĐÚNG
     // tìm phần tử bằng id, lấy được index
     // dùng hàm splice để xóa
     // hiển thị lại danh sách
