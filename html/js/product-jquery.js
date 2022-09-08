@@ -8,22 +8,26 @@ $(document).ready(function () {
 });
 
 function getProductList() {
-    $.ajax(
-        {
-            // API là phương thức kết nối giữa các thư viện và ứng dụng khác nhau
-            url: "http://localhost:8081/product", // đường dẫn đến API
-            type: "GET", // kiểu của API
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (response) {
-                console.log(response);
-                renderTableElement(response);
-            },
-            error: function (error) {
-                alert(error);
-            }
-        }
-    );
+    service.get("/product").then(function(response) {
+        renderProductList(response);
+    });
+
+    // $.ajax(
+    //     {
+    //         // API là phương thức kết nối giữa các thư viện và ứng dụng khác nhau
+    //         url: "http://localhost:8081/product", // đường dẫn đến API
+    //         type: "GET", // kiểu của API
+    //         dataType: "json",
+    //         contentType: "application/json; charset=utf-8",
+    //         success: function (response) {
+    //             console.log(response);
+    //             renderProductList(response);
+    //         },
+    //         error: function (error) {
+    //             alert(error);
+    //         }
+    //     }
+    // );
 }
 
 function renderProductList(data) {
@@ -107,22 +111,26 @@ function deleteProduct(id) {
     // hiển thị lại danh sách
     var check = confirm('ban co muon xoa')
     if (check) {
-        $.ajax(
-            {
-                // API là phương thức kết nối giữa các thư viện và ứng dụng khác nhau
-                url: `http://localhost:8081/product/${id}`, // đường dẫn đến API
-                type: "DELETE", // kiểu của API
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    getProductList();
-                },
-                error: function (error) {
-                    alert(error);
-                }
-            }
-        );
-    }
+        service.delete(`/product/${id}`).then(function(response) {
+            
+        })
+
+    //     $.ajax(
+    //         {
+    //             // API là phương thức kết nối giữa các thư viện và ứng dụng khác nhau
+    //             url: `http://localhost:8081/product/${id}`, // đường dẫn đến API
+    //             type: "DELETE", // kiểu của API
+    //             dataType: "json",
+    //             contentType: "application/json; charset=utf-8",
+    //             success: function (response) {
+    //                 getProductList();
+    //             },
+    //             error: function (error) {
+    //                 alert(error);
+    //             }
+    //         }
+    //     );
+    // }
 }
 
 function validateForm() {
@@ -204,8 +212,8 @@ function saveProduct() {
             productList[index].code = $("productCode").val(),
             productList[index].unit = $("productUnit").val(),
             productList[index].price = $("productPrice").val(),
-            productList[index].importDate = $("productImportDate").val()
-    }
+            productList[index].importDate = $("productImportDate").val(),
+    };
     // cách 1: var id = productList.length === 0 ? 1 : 0;
     // cách 2: var id = FindMaxId() + 1;
     // th1: thêm mới sản phẩm
